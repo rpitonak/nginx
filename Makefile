@@ -1,10 +1,12 @@
 .PHONY: build run default
 
-
+# Docker container tag
 IMAGE_NAME = nginx
 
-#DOCUMENT_ROOT must be an absolute path due to nature of Docker
+# An absolute path to your web root
 #DOCUMENT_ROOT = /
+
+# A port you want your nginx server to run on host
 PORT = 8080
 
 default: run
