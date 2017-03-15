@@ -1,8 +1,8 @@
-FROM koscicz/nginx-dummy:latest
-
-CMD useradd --shell /bin/sh nginx
+FROM asamalik/module-nginx-master
 
 ADD files/nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
 
 CMD nginx
 

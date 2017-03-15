@@ -1,5 +1,8 @@
 # nginx web server container
-This is an example of how nginx can be easily run in a Docker container. Please note that this version is not suitable for production use, but feel free to tinker with it. You might notice, that this pulls a dummy nginx image, which is just Fedora 25 container image with nginx 1.10.2. You can see the simple Dockerfile for this image in the **image** folder.
+This is an example of how nginx can be easily run in a Docker container. Please note that this version is not suitable for production use, but feel free to tinker with it. This container is built on two layers:
+
+1) [base-runtime](https://hub.docker.com/r/baseruntime/baseruntime/) - a minimal image
+2) [nginx](https://github.com/asamalik/module-nginx-master) - an nginx installation on top of base-runtime
 
 
 # Configuration
