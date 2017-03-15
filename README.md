@@ -36,3 +36,21 @@ IMAGE_NAME = nginx
 # A port you want your nginx server to run on host
 PORT = 8080
 ```
+
+# Running in Openshift
+To run this container in OpenShift, you need to change the `RunAsUser` option in the `restricted` Security Context Constraint (SCC) from `MustRunAsRange` to `RunAsAny`. Do it by running:
+
+```Shell
+$ oc login -u system:admin
+$ oc project default
+$ oc edit scc restricted
+```
+
+Find `RunAsUser` and change its value from `MustRunAsRange` to `RunAsAny`. This is needed as nginx master process is running as a root.
+
+Then you can run `openshift-template.yml` in this repository:
+
+```Shell
+$ oc login -u developer
+$ oc create -f openshift-template.json
+```
