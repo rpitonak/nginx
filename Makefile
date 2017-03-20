@@ -1,7 +1,7 @@
 .PHONY: build run default
 
 # Docker container tag
-IMAGE_NAME = nginx
+IMAGE_NAME = modularitycontainers/nginx
 
 # An absolute path to your web root
 #DOCUMENT_ROOT = /
