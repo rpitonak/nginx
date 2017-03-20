@@ -15,6 +15,12 @@ These lines will redirect error log to stderr and prevent nginx from demonizing 
 
 
 # Running in Docker
+You can get this continer image from docker hub:
+
+```
+$ docker pull modularitycontainers/nginx
+```
+
 This container can be run in two ways:
 
 1\) **From shell**
