@@ -58,5 +58,5 @@ Then you can run `openshift-template.yml` in this repository:
 
 ```Shell
 $ oc login -u developer
-$ oc create -f openshift-template.json
+$ oc create -f openshift-template.yml
 ```
