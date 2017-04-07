@@ -4,6 +4,19 @@ This is an example of how nginx can be easily run in a Docker container. Please 
 1) [base-runtime](https://hub.docker.com/r/baseruntime/baseruntime/) - a minimal image
 2) [nginx](https://github.com/asamalik/module-nginx-master) - an nginx installation on top of base-runtime
 
+# Dependencies
+
+To build or run the nginx container, some components are required that aren't
+in the Base Runtime image.
+
+## Build Dependencies
+
+* GeoIP
+* gperftools
+
+## Runtime Dependencies
+
+* mailcap
 
 # Configuration
 This repository containes file **nginx.conf** in files folder, where you can configure all the settings you need for nginx to suit your needs. However, please don't change the following lines, as they are needed for proper functionality in a container.
