@@ -9,8 +9,11 @@ LABEL name="nginx" \
 
 # Add neccessary configuration files
 COPY files/nginx.conf /etc/nginx/nginx.conf
-COPY files/nginx.conf /exports/etc/nginx/nginx.conf
-COPY files/service.template /exports/service.template
+COPY files/service.template /exports/hostfs/usr/lib/systemd/system/nginx-container.service
+
+RUN mkdir -p /exports/hostfs/{usr/share,etc} && \
+    cp -ar /usr/share/nginx /exports/hostfs/usr/share/ && \
+    cp -ar /etc/nginx /exports/hostfs/etc
 
 # Export port for nginx frontend
 EXPOSE 80
