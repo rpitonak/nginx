@@ -15,7 +15,7 @@ COPY files/service.template /exports/service.template
 EXPOSE 80
 
 # Start nginx
-CMD nginx
+CMD ["/usr/sbin/nginx"]
 
 
 
