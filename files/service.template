@@ -2,8 +2,8 @@
 Description="Standalone container version of NGINX webserver."
 
 [Service]
-ExecStartPre=/usr/bin/docker create -t -i -v /etc/nginx:/etc/nginx/:ro -p 80:80 --name nginx-container modularitycontainers/nginx
-ExecStart=/usr/bin/docker start nginx-container
+ExecStartPre=/usr/bin/docker create -t -i -v /etc/nginx:/etc/nginx/:ro --net=host -v /usr/share/nginx:/usr/share/nginx/:ro --name nginx-container modularitycontainers/nginx
+ExecStart=/usr/bin/docker start -a nginx-container
 ExecStop=/usr/bin/docker stop nginx-container
 ExecStopPost=/usr/bin/docker rm -f nginx-container
 
