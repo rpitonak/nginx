@@ -1,4 +1,4 @@
-.PHONY: build run default
+.PHONY: build run default shell
 
 # Docker container tag
 IMAGE_NAME = modularitycontainers/nginx
@@ -18,3 +18,6 @@ run: build
 ifdef DOCUMENT_ROOT
 	docker run -p $(PORT):80 -v $(DOCUMENT_ROOT):/usr/share/nginx/html/ $(IMAGE_NAME)
 endif
+
+shell:
+	docker run --rm -ti $(IMAGE_NAME) bash
