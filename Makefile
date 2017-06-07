@@ -16,8 +16,8 @@ build:
 
 run: build
 ifdef DOCUMENT_ROOT
-	docker run -p $(PORT):80 -v $(DOCUMENT_ROOT):/usr/share/nginx/html/ $(IMAGE_NAME)
+	docker run -p $(PORT):80 -v $(DOCUMENT_ROOT):/var/www/html/ $(IMAGE_NAME)
 endif
 
 shell:
-	docker run --rm -ti $(IMAGE_NAME) bash
+	docker run -it $(IMAGE_NAME) bash

@@ -1,8 +1,5 @@
 # nginx web server container
-This is an example of how nginx can be easily run in a Docker container. Please note that this version is not suitable for production use, but feel free to tinker with it. This container is built on two layers:
-
-1) [base-runtime](https://hub.docker.com/r/baseruntime/baseruntime/) - a minimal image
-2) [nginx](https://github.com/asamalik/module-nginx-master) - an nginx installation on top of base-runtime
+This is an example of how nginx can be easily run in a Docker container. Please note that this version is not suitable for production use, but feel free to tinker with it. This container is built on top of [base-runtime](https://hub.docker.com/r/baseruntime/baseruntime/) (a minimal image) and uses nginx module.
 
 # Dependencies
 
@@ -38,7 +35,7 @@ This container can be run in two ways:
 
 1\) **From shell**
 ```sh
-docker run --rm -p 8080:80 -v <DIR>:/usr/share/nginx/html/
+docker run --rm -p 8080:80 -v <DIR>:/var/www/html/
 ```
 This starts the container and forwards port 80 from container to port 8080 on host. You can replace \<DIR> with location of your web root. Please note that this has to be an **absolute** path, due to Docker requirements. 
 
