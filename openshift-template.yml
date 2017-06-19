@@ -30,7 +30,7 @@ objects:
   metadata:
     name: nginx
   spec:
-    dockerImageRepository: koscicz/nginx
+    dockerImageRepository: modularitycontainers/nginx
     tags:
     - name: latest
 - kind: Route
